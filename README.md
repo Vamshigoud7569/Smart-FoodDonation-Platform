@@ -44,14 +44,14 @@ The system enables seamless communication between donors and receivers, helping 
 - React.js
 - HTML5
 - CSS3
-- JavaScript
+- TypeScript
 
 ### Backend
-- Node.js
-- Express.js
+- Java
+- Springboot
 
 ### Database
-- MongoDB
+- MYSQL
 
 ### Tools & Technologies
 - Git
