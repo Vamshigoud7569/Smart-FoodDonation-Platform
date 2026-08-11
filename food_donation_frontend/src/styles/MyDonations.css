@@ -1,0 +1,203 @@
+.dashboard-layout { display: flex; flex-direction: column; }
+.dashboard-content { padding: 0; }
+.card-container { display: flex; flex-direction: column; gap: 20px; }
+
+.tabs-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--dd-line, #EEE3CF);
+  background: var(--dd-paper-raised, #fff);
+  color: var(--dd-ink-soft, #6B5D4F);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.tab-btn:hover { transform: translateY(-2px); }
+
+.tab-btn.active {
+  background: linear-gradient(160deg, #241A12 0%, #3A2A1B 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 14px rgba(36, 26, 18, 0.25);
+}
+
+.tab-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.08);
+}
+
+.tab-btn.active .tab-badge { background: rgba(255,255,255,0.22); }
+
+.loading-view { color: var(--dd-ink-faint, #A6987F); font-size: 14px; }
+
+.error-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 0;
+  text-align: center;
+}
+
+.error-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FBEAE8;
+  color: #B23A32;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.retry-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #1E7A44 0%, #3ED07A 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.retry-btn:hover { transform: translateY(-2px); }
+
+.donations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.food-card {
+  background: var(--dd-paper-raised, #fff);
+  border: 1px solid var(--dd-line, #EEE3CF);
+  border-radius: 18px;
+  padding: 18px;
+  animation: ddFadeInUp 0.4s ease both;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--dd-shadow-soft, 0 4px 14px rgba(36,26,18,0.08));
+  border-color: #3ED07A;
+}
+
+.card-header-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.food-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FBF0DD;
+  font-size: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.food-icon-img { width: 100%; height: 100%; object-fit: cover; }
+
+.title-section { flex: 1; min-width: 0; }
+.title-section h3 { font-size: 14px; font-weight: 700; margin: 0; color: var(--dd-ink, #241A12); }
+
+.food-type-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dd-ink-soft, #6B5D4F);
+  margin-top: 2px;
+}
+
+.status-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.status-pill.active    { background: linear-gradient(135deg, #E58A0B 0%, #F5B542 100%); }
+.status-pill.completed { background: linear-gradient(135deg, #1E7A44 0%, #3ED07A 100%); }
+.status-pill.expired    { background: linear-gradient(135deg, #B23A32 0%, #F0645A 100%); }
+
+.card-divider {
+  border: none;
+  border-top: 1px solid var(--dd-line, #EEE3CF);
+  margin: 14px 0;
+}
+
+.card-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.detail-item { display: flex; flex-direction: column; gap: 3px; }
+.detail-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--dd-ink-faint, #A6987F); }
+.detail-value { font-size: 13px; font-weight: 600; color: var(--dd-ink, #241A12); }
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: inline-block;
+}
+/* styles/MyDonations.css */
+
+.card-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0; /* NEW — lets this grid cell shrink instead of forcing overflow */
+}
+
+.detail-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--dd-ink-faint, #A6987F); }
+
+.detail-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dd-ink, #241A12);
+  overflow-wrap: anywhere; /* NEW — breaks long words/addresses instead of overflowing */
+  word-break: break-word;  /* NEW — fallback for older browsers */
+}
+
+/* was: white-space: nowrap; overflow: hidden; text-overflow: ellipsis; */
+.text-truncate {
+  white-space: normal;   /* CHANGED — allow wrapping onto multiple lines */
+  overflow: visible;     /* CHANGED */
+  display: block;        /* CHANGED */
+  max-width: 100%;
+}
