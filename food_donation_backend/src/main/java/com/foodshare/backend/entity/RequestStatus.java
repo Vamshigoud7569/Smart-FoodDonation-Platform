@@ -6,7 +6,7 @@ public enum RequestStatus {
     REJECTED,
     IN_TRANSIT,
     PICKED_UP, 
-    DELIVERED, 
+    DELIVERED,
     COMPLETED,
     CANCELLED
 }

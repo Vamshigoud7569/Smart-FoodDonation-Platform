@@ -39,6 +39,7 @@ public class SecurityConfig {
                 "http://localhost:8000",
                 "http://127.0.0.1:5500"
         ));
+        config.addAllowedOrigin("https://fooddonationapplication.netlify.app");
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
